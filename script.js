@@ -1,4 +1,4 @@
-const apiKey = '22de28658d704cc4b2a121143241610'; // This should be secret :)
+const apiKey = '2cc0bace8b3a4544ae2145542241610'; // This should be secret :)
 
 const cityInput = document.getElementById('cityInput');
 const weatherData = document.querySelector('.weatherData');
@@ -13,7 +13,7 @@ cityInput.addEventListener('keydown', (e) => {
 const fetchWeatherData = async (city) =>{
     try {
         weatherData.innerHTML = `<h2>Loading...</h2>`;
-        const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=1`);
+        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=1`);
         if (!response.ok) {
             throw new Error("City not found");
         }
